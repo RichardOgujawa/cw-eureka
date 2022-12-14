@@ -1,0 +1,204 @@
+/*IMPORTS
+------------------------------------------------*/
+/*--RESET--*/
+@import url("reset.css");
+
+
+/*SETUP
+------------------------------------------------*/
+/*--VARIABLES--*/
+:root {
+    /*Colour*/
+    --clr-neutral-100-transparent: 0, 0%, 100%, 0.65; 
+    --clr-neutral-100: 0, 0%, 95%; 
+    --clr-neutral-300: 0, 0%, 75%; 
+    --clr-neutral-900: 0, 0%, 20%; 
+
+    --clr-red-400: 24deg 70% 57%;
+
+    --clr-teal-400: 178deg 100% 13%;
+
+    /*Fonts*/
+        /*font size*/
+        font-size: 15px;
+
+        --fs-400: 1rem; 
+        --fs-600: 3rem;
+        --fs-900: 10rem; 
+
+        /*font family*/
+        --ff-accent:'Big Shoulders Display', cursive;
+        --ff-base: 'Lexend Deca', sans-serif;
+
+        /*font weight*/
+        --fw-regular: 400; 
+        --fw-bold: 700;
+
+    /*Transitions*/
+    --transition-fast: 0.3s ease; 
+    --transition-slow: 0.45s ease;
+}
+
+/*UTILITY CLASSES
+------------------------------------------------*/
+/*--LAYOUT--*/
+.flex {
+    display: flex; 
+    gap: var(--flex-gap);
+}
+
+.flex-wrap {
+    display: flex; 
+    gap: var(--flex-wrap-gap); 
+    flex-wrap: wrap; 
+}
+
+.grid {
+    display: grid; 
+    row-gap: var(--grid-row-gap);
+    column-gap: var(--grid-column-gap);
+}
+
+/*--BUTTON--*/
+.btn {
+    padding: 0.5rem 1.4rem; 
+    border: 3px solid transparent;
+    border-radius: 100vw; 
+
+    font-weight: var(--fw-bold);
+    
+    background: hsl(var(--clr-neutral-100));
+
+    transition: var(--transition-fast);
+}
+
+.btn.teal {
+    color: hsl(var(--clr-neutral-100));
+    background-color: hsl(var(--clr-teal-400));
+}
+
+.btn.off-white {
+    color: hsl(var(--clr-teal-400));
+    background-color: hsl(var(--clr-neutral-100));
+}
+
+.btn.teal:is(:hover, :focus){
+    border: 3px solid hsl(var(--clr-teal-400)); 
+
+    color: hsl(var(--clr-teal-400));
+    background-color: transparent;
+    
+    cursor: pointer;
+}
+
+.btn.off-white:is(:hover, :focus){
+    border: 3px solid hsl(var(--clr-neutral-900)); 
+
+    color: hsl(var(--clr-teal-400));
+    background-color: hsl(var(--clr-red-400));
+    
+    cursor: pointer;
+}
+
+
+
+
+
+/*GLOBAL CSS
+------------------------------------------------*/
+h1 {
+    width: fit-content;
+    margin: 2rem auto;
+    
+    align-self: center;
+
+    position: relative;
+}
+
+h1::after {
+    content: ""; 
+    
+    width: 100%; 
+    height: 4px; 
+    
+    position: absolute;
+    inset: calc(100% + -2px) auto auto 0;
+
+    background-color: hsl(var(--clr-neutral-900));
+    
+    transform: translateX(0%);
+    
+    animation: underline var(--transition-slow);
+}
+
+@keyframes underline {
+    0% {
+        transform: scaleX(0%)
+    }
+    100% {
+        transform: scaleX(100%)
+    }
+}
+
+
+/*CUSTOM CSS
+------------------------------------------------*/
+body {
+    min-height: 100vh;
+
+    display: grid; 
+    place-content: center;
+
+    text-align: center;
+}
+
+main {
+    width: 100%; 
+}
+
+/*--FORM--*/
+input {
+    padding: 0.5rem 1.4rem; 
+    border: 3px solid hsl(var(--clr-teal-400)/35%);
+    border-radius: 100vw; 
+}
+
+input:is(:hover, :focus) {
+    border-color: hsl(var(--clr-teal-400)); 
+    
+    outline: none;
+
+    transition: var(--transition-fast);
+}
+
+.form__input {
+    display: grid;
+}
+
+.form__input:last-of-type {
+    margin-block: 1rem;
+}
+
+/*Explanation*/
+.explanation {
+    margin-block-start: 2rem;
+    text-align: justify;
+    text-justify: auto;
+    width: 50ch;
+    border-top: 1px solid hsl(var(--clr-neutral-300));
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.example{
+    background-color: hsl(var(--clr-neutral-300), 30%);
+    padding: 1rem;
+}
+
+@media screen and (max-width: 30rem){
+    :root {
+        font-size: 12.5px;
+    }
+}

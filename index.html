@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="description" content="Rent out any type of car from a Sedans to a Luxury car of choice, all for affordable prices.">
+  <meta name="robots" content="all">
+
+  <!--TITLE-->
+    <title>Code Wars | Eureka</title>
+
+  <!--WHEN YOU SAVE/BOOKMARK THIS WEBPAGE-->
+  <link href="https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/63503fd3823762323d600de6_favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+  <!--SOCIAL MEDIA-->
+  <!--Twitter-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ogujawa7">
+    <meta name="twitter:creator" content="@ogujawa7">
+    <meta name="twitter:title" content="Eureka">
+    <meta name="twitter:description"
+      content="My solution for a codewars project titled Eureka.">
+    <meta name="twitter:creator" content="@ogujawa7">
+
+  <!--OG TAGS (Facebook, Linkedin)-->
+    <meta property="og:name" content="Code Wars">
+    <meta property="og:image"
+      content="https://images.pexels.com/photos/4792503/pexels-photo-4792503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+    <meta property="og:url" content="https://cw-eureka.netlify.app">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+      content="My solution for a codewars project titled Eureka.">
+    <meta property="og:locale" content="en-GB">
+    <meta property="og:site_name" content="https://cw-eureka.netlify.app">
+
+  <!--STYLESHEET(S)-->
+    <link rel="stylesheet" href="styles/main.css">
+
+  <!--SITE LINKS (CANONICAL & ALTERNATIVES)-->
+
+  <!--CDNs-->
+  <!--Font Awesome CDN-->
+    <script src="https://kit.fontawesome.com/d908522f87.js" crossorigin="anonymous"></script>
+
+  <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <form action="">
+            <h1>Eureka!</h1>
+
+            <div class="form__input first-num">
+                <label for="first-num">Lower limit of range:</label>
+                    <input id="first-num" name="first-number" type="number" min="0" required>
+            </div>
+
+            <div class="form__input second-num">
+                <label for="second-num">Higher limit of range:</label>
+                    <input id="second-num" name="second-number" type="number" min="0" required>
+            </div>
+            <button class="btn teal" type="submit">Submit</button>
+            <button class="btn off-white" type="submit">Reset</button>
+        </form>
+
+        <div class="explanation">
+            <h2>Explanation</h2>
+            <p >Enter <strong>two</strong> numbers to see if any of the whole numbers between them satisfy the <strong>Eureka! rule.</strong></p>
+            <p>The Eureka! rule is such that: "the sum of the numbers raised to the exponent of their respective positions gives you the sum of the numbers."</p>
+            <p class="example"><strong>For example: 89 = 8<sup>1</sup> + 9<sup>2</sup></strong></p>
+            <p>If you're right the <span class="underline">Eureka!</span> heading will turn green and you'll see which numbers satisfy this rule below 👇🏾.</p>
+            <p id="result"><strong>Result:</strong> </p>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
