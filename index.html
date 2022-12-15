@@ -55,32 +55,35 @@
     <main>
 
         <form action="">
-            <h1>Eureka!</h1>
+            <h1 id="heading">Eureka!</h1>
 
             <div class="form__input first-num">
-                <label for="first-num">Lower limit of range:</label>
-                    <input id="first-num" name="first-number" type="number" min="0" required>
+                <label for="input1">Lower limit of range:</label>
+                    <input id="input1" name="first-number" value="10" type="number" min="0" required>
             </div>
 
             <div class="form__input second-num">
-                <label for="second-num">Higher limit of range:</label>
-                    <input id="second-num" name="second-number" type="number" min="0" required>
+                <label for="input2">Higher limit of range:</label>
+                    <input id="input2" name="second-number" value="10" type="number" min="0" required>
             </div>
-            <button class="btn teal" type="submit">Submit</button>
-            <button class="btn off-white" type="submit">Reset</button>
+            <button id="submitBtn" class="btn teal" type="button">Submit</button>
+            <button id="resetBtn" class="btn off-white" type="button">Reset</button>
         </form>
 
-        <div class="explanation">
-            <h2>Explanation</h2>
-            <p >Enter <strong>two</strong> numbers to see if any of the whole numbers between them satisfy the <strong>Eureka! rule.</strong></p>
+        <p><strong>Result |</strong> <span id="results"></span> </p>
+
+
+        <details class="explanation">
+            <summary>Explanation</summary>
+            <p>Enter <strong>two</strong> numbers to see if any of the whole numbers between them satisfy the <strong>Eureka! rule.</strong></p>
             <p>The Eureka! rule is such that: "the sum of the numbers raised to the exponent of their respective positions gives you the sum of the numbers."</p>
             <p class="example"><strong>For example: 89 = 8<sup>1</sup> + 9<sup>2</sup></strong></p>
             <p>If you're right the <span class="underline">Eureka!</span> heading will turn green and you'll see which numbers satisfy this rule below 👇🏾.</p>
-            <p id="result"><strong>Result:</strong> </p>
-        </div>
-
+            <p class="warning">Please ensure that the  <em>higher limit</em> number is <strong>bigger</strong> than the <em>lower limit</em> one or else this game will not work. Also make sure that the lower limit starts is <strong>greater than 10.</strong></p>
+        </details>
     </main>
 
+    <script src="script.js"></script>
 
 </body>
 

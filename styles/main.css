@@ -14,7 +14,8 @@
     --clr-neutral-300: 0, 0%, 75%; 
     --clr-neutral-900: 0, 0%, 20%; 
 
-    --clr-red-400: 24deg 70% 57%;
+    --clr-orange-400: 24deg 67.6% 67%;
+    --clr-orange-900: 24deg 70% 25%;
 
     --clr-teal-400: 178deg 100% 13%;
 
@@ -22,12 +23,13 @@
         /*font size*/
         font-size: 15px;
 
+        --fs-300: 0.85rem; 
         --fs-400: 1rem; 
         --fs-600: 3rem;
         --fs-900: 10rem; 
 
         /*font family*/
-        --ff-accent:'Big Shoulders Display', cursive;
+        /* --ff-accent:'Big Shoulders Display', cursive; */
         --ff-base: 'Lexend Deca', sans-serif;
 
         /*font weight*/
@@ -95,12 +97,16 @@
     border: 3px solid hsl(var(--clr-neutral-900)); 
 
     color: hsl(var(--clr-teal-400));
-    background-color: hsl(var(--clr-red-400));
+    background-color: hsl(var(--clr-orange-400));
     
     cursor: pointer;
 }
 
-
+.warning {
+    color: hsl(var(--clr-orange-900));
+    background-color: hsl(var(--clr-orange-400)/20%);
+    padding: 1em;
+}
 
 
 
@@ -127,6 +133,8 @@ h1::after {
     background-color: hsl(var(--clr-neutral-900));
     
     transform: translateX(0%);
+    transition: var(--transition-slow);
+    transform-origin: left;
     
     animation: underline var(--transition-slow);
 }
@@ -140,6 +148,13 @@ h1::after {
     }
 }
 
+p:not(.explanation p){
+    width: 50ch;
+    margin: 1rem auto;
+        
+    font-size: var(--fs-300);
+    
+}
 
 /*CUSTOM CSS
 ------------------------------------------------*/
@@ -148,6 +163,9 @@ body {
 
     display: grid; 
     place-content: center;
+
+    font-size: var(--fs-400);
+    font-family: var(--ff-base);
 
     text-align: center;
 }
@@ -179,9 +197,14 @@ input:is(:hover, :focus) {
     margin-block: 1rem;
 }
 
+label {
+    margin-bottom: 3px;
+}
+
 /*Explanation*/
-.explanation {
+.explanation{
     margin-block-start: 2rem;
+    padding-block-start: 1rem;
     text-align: justify;
     text-justify: auto;
     width: 50ch;
@@ -195,6 +218,10 @@ input:is(:hover, :focus) {
 .example{
     background-color: hsl(var(--clr-neutral-300), 30%);
     padding: 1rem;
+}
+
+summary {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 30rem){
